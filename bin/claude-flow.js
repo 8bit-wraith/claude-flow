@@ -69,7 +69,7 @@ async function main() {
       });
       
       child.on('exit', (code) => {
-        process.exit(code || 0);
+        process.exit(code ?? 1);
       });
       
       return;
@@ -100,12 +100,12 @@ async function main() {
         });
         
         npxChild.on('exit', (code) => {
-          process.exit(code || 0);
+          process.exit(code ?? 1);
         });
       });
       
       child.on('exit', (code) => {
-        process.exit(code || 0);
+        process.exit(code ?? 1);
       });
       
       return;
